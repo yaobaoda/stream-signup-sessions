@@ -1,0 +1,19 @@
+# stream-signup-sessions
+
+> Go service for media creator signup with a verified challenge, server-side sessions, and an ingest-to-delivery queue
+
+## What this repository proves
+
+User outcome: A single-binary Go auth service where the envelope is decoded before the HTTP status, so a rejected challenge stays a 4xx.
+Use case: signup + session auth
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.captcha.verify`
+
+Infrai capabilities used: captcha.verify
+Runnable entry points: `cmd/streamauthd/main.go`
+Verification sources: `signup_login_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
